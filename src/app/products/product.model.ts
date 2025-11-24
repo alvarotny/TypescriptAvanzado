@@ -14,4 +14,6 @@ export interface Producto extends Basemodel{
   precio:number,
   medida:Sizes,
   tag: TAG,
-  cliente:Cliente}
+  cliente:Cliente,
+  list:[]
+}
