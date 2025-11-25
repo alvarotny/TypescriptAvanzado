@@ -57,11 +57,14 @@ const findP = (data: findProduct): Producto[] | null => {
       return item[key as keyof Producto] === value;
     });
   });
+<<<<<<< HEAD
   BitcoinAddressFamilyasdf
   as
   fd
   a
   sdf
+=======
+>>>>>>> origin/main
 
   return filtered.length > 0 ? filtered : null;
 };
