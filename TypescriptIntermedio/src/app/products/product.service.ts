@@ -2,12 +2,8 @@ import {Producto} from "./product.model"
 import { CreateNewProduct } from "./product.dto"
 import {fa, faker, fakerVI}from "@faker-js/faker"
 import {DATA} from "../etiqueta/etiqueta.model"
-import { PartialProduct, findProduct } from "./product.dto"
-
-
-
-
 export let productList : Producto[] = []
+
 // agrregar el producto y lo almacena en una lista
 // "id" | "createdAT" | "updateAT" | "cliente"
 export const addProduct = (data:CreateNewProduct): Producto =>{
@@ -28,25 +24,16 @@ export const addProduct = (data:CreateNewProduct): Producto =>{
   productList.push(newProduct)
   return newProduct
 }
-//LISTAR PRODUCTOS
-const getProduct = ():void =>{
-  productList.forEach((item) =>{
-    console.log(`ID: ${item.id} Producto: ${item.nombre} precio: ${item.precio} medida: ${item.medida}`)
-  })
-}
 
-
-//ACTUALIZAR PRODUCTO ESPECIFICOs
-// id:Producto["id"] ==> acceder al tipado por su indice
-export const updateP = (id:Producto["id"], changes:PartialProduct):Producto | null=>{
-  let index = productList.findIndex(item => item.id === id);
+const updateP = (id:number, changes: Partial<Producto>) =>{
+  let index = productList.findIndex((item)=> item.id === id);
   if(index === -1){
-    console.log("Producto no encontrado");
-    return null;
+    console.log("Producto no encontrado")
+    return;
   }
   Object.assign(productList[index]!, changes)
-  return productList[index]!;
 }
+<<<<<<< HEAD
 
 // Metodo para busqueda de productos segun un id
 const findP = (data: findProduct): Producto[] | null => {
@@ -68,3 +55,5 @@ const findP = (data: findProduct): Producto[] | null => {
 
   return filtered.length > 0 ? filtered : null;
 };
+=======
+>>>>>>> parent of 32f963c ([ADD] usar Partial para hacer todas las propiedades opcionales en Product)
