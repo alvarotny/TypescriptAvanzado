@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    // --- RUTAS Y SALIDA ---
+    "outDir": "./dist",
+    "rootDir": "./src",              // Recomendado si tienes tu código en /src
+
+    // --- MÓDULOS (LA PARTE CLAVE) ---
+    "module": "commonjs",            // ✅ Cambiado de nodenext a commonjs
+    "moduleResolution": "node",      // ✅ Resolución estándar de Node
+    "esModuleInterop": true,         // ✅ Permite compatibilidad total entre import y require
+    "verbatimModuleSyntax": false,   // ✅ APAGADO: Esto elimina tus errores de import/export
+    "target": "es2018",  
+    "experimentalDecorators": true,            // Un buen estándar para Node.js actual
+
+    // --- TIPOS ---
+    "strict": true,                  // Mantén esto, es bueno para aprender
+    "noUncheckedIndexedAccess": true,
+    
+    // --- OPCIONALES (Limpieza) ---
+    "skipLibCheck": true,            // Ahorra tiempo de compilación
+    "forceConsistentCasingInFileNames": true
+  }
+}
